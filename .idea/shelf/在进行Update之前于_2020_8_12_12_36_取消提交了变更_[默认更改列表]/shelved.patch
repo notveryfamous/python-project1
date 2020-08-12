@@ -1,0 +1,515 @@
+Index: 变量.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># 算数运算符\r\n\r\n# 一、关于加号的运算\r\n# 1.数字之间相加\r\nprint(1+2.0);\r\n\r\n# 2.数字与布尔型之间\r\nprint(int(True));\r\nprint(int(False));\r\nprint(1+True);\r\nprint(1+False);\r\n\r\n# 3.字符串之间相加\r\nprint('Hello'+'Python'+'.');\r\n\r\n# 二、关于减号的运算\r\n# 集合之间的减法\r\na={1,2,3,4,5,6};\r\nb={1,2,3};\r\nprint(a-b);\r\n\r\n# 三、关于乘号的运算\r\n# 字符串、列表、元组\r\nprint('Python '*3);\r\nprint([1,2,3]*3);\r\nprint((1,2,3)*3);\r\n\r\n# 四、关于求余的运算\r\n# 求余时，如果是浮点型，则结果返回浮点型\r\nprint(10%3);\r\nprint(10.0%3);\r\n\r\n# 五、关于取整的运算\r\n# 求余时，如果是浮点型，则结果返回浮点型\r\nprint(10//3);\r\nprint(10//3.0);\r\n\r\n\r\n#-----------------------------------------------------------------------------#（我是分割线）\r\n\r\n\r\n# 赋值运算符\r\n\r\n# 变量赋值\r\na=1;\r\nprint(a);\r\n# 先运算再赋值\r\n\r\n# +=\r\na=1;\r\nb=2\r\na += b; # a=a+2\r\nprint(a);\r\n\r\n# -=\r\na=1;\r\nb=2;\r\na -= b; # a=a-2\r\nprint(a);\r\n\r\n# *=\r\na=1;\r\nb=2;\r\na *= b; # a=1*2\r\nprint(a);\r\n\r\n# /=\r\na=1;\r\nb=2;\r\na /= b; # a=1/2\r\nprint(a);\r\n\r\n# %=\r\na=1;\r\nb=2;\r\na %= b; # a=a%b\r\nprint(a);\r\n\r\n# **=\r\na=1;\r\nb=2;\r\na **= b; # a=a**b\r\nprint(a);\r\n\r\n# //=\r\na=1;\r\nb=2;\r\na //= b; # a=a//b\r\nprint(a);\r\n\r\n\r\n#-----------------------------------------------------------------------------#（我是分割线）\r\n\r\n\r\n# 比较（关系）运算符\r\n# 返回布尔类型\r\n\r\n# 数字之间比较\r\n\r\n# == 返回两个对象的值是否相等\r\nprint(1 == 1);\r\nprint(1 == 0.5);\r\n\r\n# <> 和 != 都是不等于\r\n# <> 用于Python 2\r\n# != 用于 Python 2 3\r\nprint(1!=1);\r\nprint(1!=0.5);\r\n\r\n# >=\r\nprint(1>=1.0);\r\nprint(1>=2);\r\n\r\n# <=\r\nprint(1<=1.0);\r\nprint(1<=0.5);\r\n\r\n# 字符串之间比较\r\nprint('a'=='b');\r\nprint('a'<'b');\r\n# 通过ASCII码比较大小\r\nprint(ord('a'));\r\nprint(ord('b'));\r\nprint(ord('c'));\r\n'''\r\n如何比较'abc'与'acb'的大小\r\n逐字比较：\r\n先比较'a'与'a'，结果为一样大；\r\n再比较'b'与'c'，结果为'c'大；\r\n之后就不再比较，并输出结果：'acb'大\r\n'''\r\nprint('abc'=='acb');\r\nprint('abc'<'acb');\r\nprint('abc'>'acb');\r\n\r\n# 列表\r\nprint([1,3,2]==[1,2,3]);\r\nprint([1,3,2]>[1,2,3]);\r\nprint(['a','b','c']==['a','c','b']);\r\nprint(['a','b','c']<['a','c','b']);\r\n'''\r\n列表的比较方式等同于字符串的比较\r\n'''\r\n\r\n# 元组\r\nprint((1,3,2)==(1,2,3));\r\nprint((1,3,2)>(1,2,3));\r\nprint(('a','b','c')==('a','c','b'));\r\nprint(('a','b','c')<('a','c','b'));\r\n'''\r\n元组的比较方式等同于字符串的比较\r\n'''\r\n\r\n# 集合\r\n# 元组\r\nprint({1,3,2}=={1,2,3});\r\nprint({1,3,2}>{1,2,3});\r\nprint({'a','b','c'}=={'a','c','b'});\r\nprint({'a','b','c'}<{'a','c','b'});\r\n'''\r\n集合的比较方式不等同于字符串的比较\r\n集合是无序的\r\n只要成员都一样就相等\r\n'''\r\n\r\n# 字典\r\n# 字典不支持大小比较\r\nprint({'lemon':5,'apple':10}=={'lemon':5});\r\n# print({'lemon':5,'apple':10}<{'lemon':5});会报错\r\n\r\n\r\n#--------------------------------------------------------------------------------------------#\r\n\r\n\r\n# 逻辑运算符\r\n'''\r\n逻辑运算符有三种\r\nand（且）：条件同时成立的时候，返回True，否则返回False\r\nor（或）：条件有一个成立的时候，返回True，否则返回False\r\nnot（非）：取反\r\n逻辑运算符，操作类型与返回类型，都是布尔类型\r\n这里的操作类型，除了布尔类型，其他数据类型都会先转为布尔类型，然后再进行逻辑运算\r\n'''\r\n\r\n# 布尔类型\r\n\r\n# and\r\nprint(True and False);\r\nprint(False and False);\r\nprint(True and True);\r\n\r\n# or\r\nprint(True or False);\r\nprint(True or True);\r\nprint(False or False);\r\n\r\n# not\r\nprint(not True);\r\nprint(not False);\r\nprint(not not True);\r\nprint(not True or False); # False and False\r\nprint(not True and True); # False and True\r\n\r\n# 非布尔类型\r\n# 布尔类型为0、None、空值（空字符串、空列表、空元组、空字典、空集合）的时候，返回False\r\n\r\n# and\r\n# 当and的左右两边都为True时，返回右边的True；当and的左右两边都为False时，返回左边的False；\r\nprint(0 and 1);\r\nprint(0 and 0);\r\nprint(1 and 1);\r\nprint(2 and 1);\r\n\r\n# or\r\n# 当or的左右两边都为True时，返回左边的True；当or的左右两边都为False时，返回右边的False；\r\nprint(0 or 1);\r\nprint(0 or 0);\r\nprint(1 or 1);\r\nprint(2 or 1);\r\nprint(0 or []);\r\n\r\n# not\r\nprint(not 1);\r\nprint(not 0);\r\n\r\n\r\n#----------------------------------------------------------------#\r\n\r\n\r\n# 成员运算符\r\n'''\r\n成员运算符有两种：\r\nin\r\n和\r\nnot in\r\n判断一个元素是否在另一个元素中，返回布尔类型\r\n'''\r\n\r\n# 字符串\r\na='lemon';\r\nprint(a in 'hello lemon');\r\nprint(a not in 'hello lemon');\r\n\r\n# 列表、元组、集合\r\na=1;\r\nprint(a in [1,2,3,4,5]);\r\nprint(a in (1,2,3,4,5));\r\nprint(a in {1,2,3,4,5});\r\n\r\n# 字典\r\n# 字典的成员运算，针对的是key:value中的key\r\na=1;\r\nb={'lemon':5};\r\nprint(a in b);\r\na=5;\r\nprint(a in b);\r\na='lemon';\r\nprint(a in b);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- 变量.py	(revision 805b9fb6de5366936b2e145beffe5177f6545be6)
++++ 变量.py	(date 1597206922000)
+@@ -2,94 +2,92 @@
+ 
+ # 一、关于加号的运算
+ # 1.数字之间相加
+-print(1+2.0);
++print(1 + 2.0)
+ 
+ # 2.数字与布尔型之间
+-print(int(True));
+-print(int(False));
+-print(1+True);
+-print(1+False);
++print(int(True))
++print(int(False))
++print(1 + True)
++print(1 + False)
+ 
+ # 3.字符串之间相加
+-print('Hello'+'Python'+'.');
++print('Hello' + 'Python' + '.')
+ 
+ # 二、关于减号的运算
+ # 集合之间的减法
+-a={1,2,3,4,5,6};
+-b={1,2,3};
+-print(a-b);
++a = {1, 2, 3, 4, 5, 6}
++b = {1, 2, 3}
++print(a - b)
+ 
+ # 三、关于乘号的运算
+ # 字符串、列表、元组
+-print('Python '*3);
+-print([1,2,3]*3);
+-print((1,2,3)*3);
++print('Python ' * 3)
++print([1, 2, 3] * 3)
++print((1, 2, 3) * 3)
+ 
+ # 四、关于求余的运算
+ # 求余时，如果是浮点型，则结果返回浮点型
+-print(10%3);
+-print(10.0%3);
++print(10 % 3)
++print(10.0 % 3)
+ 
+ # 五、关于取整的运算
+ # 求余时，如果是浮点型，则结果返回浮点型
+-print(10//3);
+-print(10//3.0);
+-
++print(10 // 3)
++print(10 // 3.0)
+ 
+-#-----------------------------------------------------------------------------#（我是分割线）
++# -----------------------------------------------------------------------------#（我是分割线）
+ 
+ 
+ # 赋值运算符
+ 
+ # 变量赋值
+-a=1;
+-print(a);
++a = 1
++print(a)
+ # 先运算再赋值
+ 
+ # +=
+-a=1;
+-b=2
+-a += b; # a=a+2
+-print(a);
++a = 1
++b = 2
++a += b  # a=a+2
++print(a)
+ 
+ # -=
+-a=1;
+-b=2;
+-a -= b; # a=a-2
+-print(a);
++a = 1
++b = 2
++a -= b  # a=a-2
++print(a)
+ 
+ # *=
+-a=1;
+-b=2;
+-a *= b; # a=1*2
+-print(a);
++a = 1
++b = 2
++a *= b  # a=1*2
++print(a)
+ 
+ # /=
+-a=1;
+-b=2;
+-a /= b; # a=1/2
+-print(a);
++a = 1
++b = 2
++a /= b  # a=1/2
++print(a)
+ 
+ # %=
+-a=1;
+-b=2;
+-a %= b; # a=a%b
+-print(a);
++a = 1
++b = 2
++a %= b  # a=a%b
++print(a)
+ 
+ # **=
+-a=1;
+-b=2;
+-a **= b; # a=a**b
+-print(a);
++a = 1
++b = 2
++a **= b  # a=a**b
++print(a)
+ 
+ # //=
+-a=1;
+-b=2;
+-a //= b; # a=a//b
+-print(a);
+-
++a = 1
++b = 2
++a //= b  # a=a//b
++print(a)
+ 
+-#-----------------------------------------------------------------------------#（我是分割线）
++# -----------------------------------------------------------------------------#（我是分割线）
+ 
+ 
+ # 比较（关系）运算符
+@@ -98,30 +96,30 @@
+ # 数字之间比较
+ 
+ # == 返回两个对象的值是否相等
+-print(1 == 1);
+-print(1 == 0.5);
++print(1 == 1)
++print(1 == 0.5)
+ 
+ # <> 和 != 都是不等于
+ # <> 用于Python 2
+ # != 用于 Python 2 3
+-print(1!=1);
+-print(1!=0.5);
++print(1 != 1)
++print(1 != 0.5)
+ 
+ # >=
+-print(1>=1.0);
+-print(1>=2);
++print(1 >= 1.0)
++print(1 >= 2)
+ 
+ # <=
+-print(1<=1.0);
+-print(1<=0.5);
++print(1 <= 1.0)
++print(1 <= 0.5)
+ 
+ # 字符串之间比较
+-print('a'=='b');
+-print('a'<'b');
++print('a' == 'b')
++print('a' < 'b')
+ # 通过ASCII码比较大小
+-print(ord('a'));
+-print(ord('b'));
+-print(ord('c'));
++print(ord('a'))
++print(ord('b'))
++print(ord('c'))
+ '''
+ 如何比较'abc'与'acb'的大小
+ 逐字比较：
+@@ -129,34 +127,34 @@
+ 再比较'b'与'c'，结果为'c'大；
+ 之后就不再比较，并输出结果：'acb'大
+ '''
+-print('abc'=='acb');
+-print('abc'<'acb');
+-print('abc'>'acb');
++print('abc' == 'acb')
++print('abc' < 'acb')
++print('abc' > 'acb')
+ 
+ # 列表
+-print([1,3,2]==[1,2,3]);
+-print([1,3,2]>[1,2,3]);
+-print(['a','b','c']==['a','c','b']);
+-print(['a','b','c']<['a','c','b']);
++print([1, 3, 2] == [1, 2, 3])
++print([1, 3, 2] > [1, 2, 3])
++print(['a', 'b', 'c'] == ['a', 'c', 'b'])
++print(['a', 'b', 'c'] < ['a', 'c', 'b'])
+ '''
+ 列表的比较方式等同于字符串的比较
+ '''
+ 
+ # 元组
+-print((1,3,2)==(1,2,3));
+-print((1,3,2)>(1,2,3));
+-print(('a','b','c')==('a','c','b'));
+-print(('a','b','c')<('a','c','b'));
++print((1, 3, 2) == (1, 2, 3))
++print((1, 3, 2) > (1, 2, 3))
++print(('a', 'b', 'c') == ('a', 'c', 'b'))
++print(('a', 'b', 'c') < ('a', 'c', 'b'))
+ '''
+ 元组的比较方式等同于字符串的比较
+ '''
+ 
+ # 集合
+ # 元组
+-print({1,3,2}=={1,2,3});
+-print({1,3,2}>{1,2,3});
+-print({'a','b','c'}=={'a','c','b'});
+-print({'a','b','c'}<{'a','c','b'});
++print({1, 3, 2} == {1, 2, 3})
++print({1, 3, 2} > {1, 2, 3})
++print({'a', 'b', 'c'} == {'a', 'c', 'b'})
++print({'a', 'b', 'c'} < {'a', 'c', 'b'})
+ '''
+ 集合的比较方式不等同于字符串的比较
+ 集合是无序的
+@@ -165,11 +163,11 @@
+ 
+ # 字典
+ # 字典不支持大小比较
+-print({'lemon':5,'apple':10}=={'lemon':5});
++print({'lemon': 5, 'apple': 10} == {'lemon': 5})
+ # print({'lemon':5,'apple':10}<{'lemon':5});会报错
+ 
+ 
+-#--------------------------------------------------------------------------------------------#
++# --------------------------------------------------------------------------------------------#
+ 
+ 
+ # 逻辑运算符
+@@ -185,46 +183,45 @@
+ # 布尔类型
+ 
+ # and
+-print(True and False);
+-print(False and False);
+-print(True and True);
++print(True and False)
++print(False and False)
++print(True and True)
+ 
+ # or
+-print(True or False);
+-print(True or True);
+-print(False or False);
++print(True or False)
++print(True or True)
++print(False or False)
+ 
+ # not
+-print(not True);
+-print(not False);
+-print(not not True);
+-print(not True or False); # False and False
+-print(not True and True); # False and True
++print(not True)
++print(not False)
++print(not not True)
++print(not True or False)  # False and False
++print(not True and True)  # False and True
+ 
+ # 非布尔类型
+ # 布尔类型为0、None、空值（空字符串、空列表、空元组、空字典、空集合）的时候，返回False
+ 
+ # and
+ # 当and的左右两边都为True时，返回右边的True；当and的左右两边都为False时，返回左边的False；
+-print(0 and 1);
+-print(0 and 0);
+-print(1 and 1);
+-print(2 and 1);
++print(0 and 1)
++print(0 and 0)
++print(1 and 1)
++print(2 and 1)
+ 
+ # or
+ # 当or的左右两边都为True时，返回左边的True；当or的左右两边都为False时，返回右边的False；
+-print(0 or 1);
+-print(0 or 0);
+-print(1 or 1);
+-print(2 or 1);
+-print(0 or []);
++print(0 or 1)
++print(0 or 0)
++print(1 or 1)
++print(2 or 1)
++print(0 or [])
+ 
+ # not
+-print(not 1);
+-print(not 0);
+-
++print(not 1)
++print(not 0)
+ 
+-#----------------------------------------------------------------#
++# ----------------------------------------------------------------#
+ 
+ 
+ # 成员运算符
+@@ -237,22 +234,106 @@
+ '''
+ 
+ # 字符串
+-a='lemon';
+-print(a in 'hello lemon');
+-print(a not in 'hello lemon');
++a = 'lemon'
++print(a in 'hello lemon')
++print(a not in 'hello lemon')
+ 
+ # 列表、元组、集合
+-a=1;
+-print(a in [1,2,3,4,5]);
+-print(a in (1,2,3,4,5));
+-print(a in {1,2,3,4,5});
++a = 1;
++print(a in [1, 2, 3, 4, 5])
++print(a in (1, 2, 3, 4, 5))
++print(a in {1, 2, 3, 4, 5})
+ 
+ # 字典
+ # 字典的成员运算，针对的是key:value中的key
+-a=1;
+-b={'lemon':5};
+-print(a in b);
+-a=5;
+-print(a in b);
+-a='lemon';
+-print(a in b);
++a = 1
++b = {'lemon': 5}
++print(a in b)
++a = 5
++print(a in b)
++a = 'lemon'
++print(a in b)
++
++# ---------------------------------------------------------------------#
++
++
++# 身份运算符
++'''
++身份运算符有两种：
++is
++和
++is not
++比较两个对象，内存地址是否相等，返回布尔类型
++'''
++
++# 数字
++a = 1
++b = 1
++print(a is b)
++print(a == b)
++# 用id()查看地址
++print(id(a))
++print(id(b))
++a = 1.0
++b = 1
++print(a is b)
++print(a == b)
++print(id(a))
++print(id(b))
++
++# 字符串
++a = 'a'
++b = 'b'
++print(a is b)
++print(a == b)
++print(id(a))
++print(id(b))
++
++# 列表
++a = [1, 2, 3]
++b = [2, 1, 3]
++print(a is b)
++print(a == b)
++
++# 元组
++a = (1, 2, 3)
++b = (2, 1, 3)
++print(a is b)
++print(a == b)
++
++# 集合
++# 集合是无序的
++a = {1, 2, 3}
++b = {2, 1, 3}
++print(a is b)
++print(a == b)
++print(id(a))
++print(id(b))
++
++# 字典
++# 字典是无序的
++a = {'lemon': 5, 'apple': 10}
++b = {'apple': 10, 'lemon': 5}
++print(a is b)
++print(a == b)
++
++# ------------------------------------------------------------------#
++
++
++# 位运算符
++'''
++&按位与
++|按位或
++^按位异或
++~按位取反
++<<左移动
++>>右移动
++特点：把数字转换为二进制进行运算
++'''
++
++# &按位与
++# 两个相应位都为1，则该位为1，否则为0
++print(bin(4))
++print(bin(5))
++print(4 & 5)
++print(int('100', 2))
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ce96ca19-98c0-4b1f-9b87-301d95d77a60\" name=\"默认更改列表\" comment=\"默认更改列表\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1fw9VPirb5mBSxpXWxnWcvtVZCo\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/变量.py\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"vcs.Git\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Pytho 3.8\" type=\"PythonConfigurationType\" factoryName=\"Python\" singleton=\"false\">\r\n      <module name=\"python-project1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"D:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/变量.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ce96ca19-98c0-4b1f-9b87-301d95d77a60\" name=\"默认更改列表\" comment=\"\" />\r\n      <created>1597118311432</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1597118311432</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"默认更改列表\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"默认更改列表\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"414\" y=\"172\" width=\"1092\" height=\"789\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1597119472813\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state x=\"414\" y=\"172\" width=\"1092\" height=\"789\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119472813\" />\r\n    <state x=\"740\" y=\"284\" key=\"FileChooserDialogImpl\" timestamp=\"1597119632388\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state x=\"740\" y=\"284\" key=\"FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119632388\" />\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1597119474764\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119474764\" />\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.center\" timestamp=\"1597119474763\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119474763\" />\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.left\" timestamp=\"1597119474763\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119474763\" />\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.right\" timestamp=\"1597119474763\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state width=\"1898\" height=\"276\" key=\"GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119474763\" />\r\n    <state x=\"461\" y=\"149\" key=\"SettingsEditor\" timestamp=\"1597123585806\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state x=\"461\" y=\"149\" key=\"SettingsEditor/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597123585806\" />\r\n    <state x=\"773\" y=\"430\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1597122921422\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state x=\"773\" y=\"430\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597122921422\" />\r\n    <state x=\"721\" y=\"390\" width=\"618\" height=\"285\" key=\"org.intellij.images.editor.actions.BackgroundImageDialog\" timestamp=\"1597119635330\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1036\" />\r\n    </state>\r\n    <state x=\"721\" y=\"390\" width=\"618\" height=\"285\" key=\"org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1036@0.0.1920.1036\" timestamp=\"1597119635330\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 805b9fb6de5366936b2e145beffe5177f6545be6)
++++ .idea/workspace.xml	(date 1597206472000)
+@@ -1,7 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="ce96ca19-98c0-4b1f-9b87-301d95d77a60" name="默认更改列表" comment="默认更改列表" />
++    <list default="true" id="ce96ca19-98c0-4b1f-9b87-301d95d77a60" name="默认更改列表" comment="默认更改列表">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/变量.py" beforeDir="false" afterPath="$PROJECT_DIR$/变量.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,7 +21,7 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$/变量.py" />
+-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
++    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+   </component>
+   <component name="RunManager">
+     <configuration name="Pytho 3.8" type="PythonConfigurationType" factoryName="Python" singleton="false">
+@@ -59,14 +62,18 @@
+     <option name="LAST_COMMIT_MESSAGE" value="默认更改列表" />
+   </component>
+   <component name="WindowStateProjectService">
++    <state x="777" y="303" key="#Web浏览器" timestamp="1597206067875">
++      <screen x="0" y="0" width="1920" height="1036" />
++    </state>
++    <state x="777" y="303" key="#Web浏览器/0.0.1920.1036@0.0.1920.1036" timestamp="1597206067875" />
+     <state x="414" y="172" width="1092" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597119472813">
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
+     <state x="414" y="172" width="1092" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1597119472813" />
+-    <state x="740" y="284" key="FileChooserDialogImpl" timestamp="1597119632388">
++    <state x="740" y="284" key="FileChooserDialogImpl" timestamp="1597206052650">
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
+-    <state x="740" y="284" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1597119632388" />
++    <state x="740" y="284" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1597206052650" />
+     <state width="1898" height="276" key="GridCell.Tab.0.bottom" timestamp="1597119474764">
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
+@@ -83,10 +90,10 @@
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
+     <state width="1898" height="276" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1597119474763" />
+-    <state x="461" y="149" key="SettingsEditor" timestamp="1597123585806">
++    <state x="461" y="149" key="SettingsEditor" timestamp="1597206011334">
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
+-    <state x="461" y="149" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1597123585806" />
++    <state x="461" y="149" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1597206011334" />
+     <state x="773" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597122921422">
+       <screen x="0" y="0" width="1920" height="1036" />
+     </state>
